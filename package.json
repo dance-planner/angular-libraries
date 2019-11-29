@@ -1,6 +1,6 @@
 {
   "name": "angular-libraries",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,9 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lib:build": "ng build disclaimer && ng build impressum && ng build dps && ng build images-grid",
-    "lib:pack": "cd dist/disclaimer && npm pack && cd .. && cd dist/impressum && npm pack && cd .. && cd dist/dps && npm pack && cd dist/images-grid && npm pack && cd ..",
+    "lib:pack": "cd dist/disclaimer && npm pack && cd ../impressum && npm pack && cd ../dps && npm pack && cd ../images-grid && npm pack && cd ..",
     "lib:publish": "",
-    "lib:upgrade": "cd dist/disclaimer && npm version patch && cd .. && cd dist/impressum && npm version patch && cd .. && cd dist/dps && npm version patch && cd dist/images-grid && npm version patch && cd .."
+    "lib:upgrade": "cd dist/disclaimer && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd .."
   },
   "private": true,
   "dependencies": {
