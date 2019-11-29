@@ -1,0 +1,9 @@
+<div *ngIf="imagesWithLinks.length>0" class="flex-container" [ngStyle]="{'background-color': stylingData.bgColor, 'justify-content': 'center'}">
+
+  <span *ngFor="let item of imagesWithLinks">
+      <div [ngStyle]="{'max-height': '15px','background-color': stylingData.frameBackgroundColor,'margin-left': stylingData.frameMargin, 'margin-top': stylingData.frameMargin,'margin-bottom': stylingData.frameMargin,'margin-right': stylingData.frameMargin, 'padding-left': stylingData.framePadding, 'padding-top': stylingData.framePadding, 'padding-bottom': stylingData.framePadding, 'padding-right': stylingData.framePadding}">
+        <img [ngStyle]="{'background-color':stylingData.imageBackgroundColor, 'max-width': stylingData.imageWith, 'padding-left': stylingData.imagePadding, 'padding-top': stylingData.imagePadding,'padding-bottom': stylingData.imagePadding,'padding-right': stylingData.imagePadding}" src="{{item.imageLink}}" alt="o">
+      </div>
+
+  </span>
+</div>

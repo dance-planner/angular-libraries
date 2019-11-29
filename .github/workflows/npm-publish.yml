@@ -1,0 +1,36 @@
+name: NPM Publish Libraries
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Installing Dependencies
+        run: |
+          echo Installing Dependencies
+          sudo npm install -g npm-cli-login
+          npm install
+      - name: Run build
+        run: |
+          echo run lib:build
+          npm run lib:build
+      - name: Run Pack
+        run: |
+          echo run lib:pack
+          npm run lib:pack
+      - name: NPM Login & Publish
+        run: |
+          echo login to npm registry
+          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@michael-spengler npm-cli-login --verbose
+          cd dist/disclaimer
+          npm publish --verbose
+          cd ../dist/impressum
+          npm publish --verbose
+          cd ../dist/dps
+          npm publish --verbose
+          cd ../dist/images-grid
+          npm publish --verbose
+          cd ..

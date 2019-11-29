@@ -17,7 +17,33 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "dps": [
+        "dist/dps"
+      ],
+      "dps/*": [
+        "dist/dps/*"
+      ],
+      "impressum": [
+        "dist/impressum"
+      ],
+      "impressum/*": [
+        "dist/impressum/*"
+      ],
+      "disclaimer": [
+        "dist/disclaimer"
+      ],
+      "disclaimer/*": [
+        "dist/disclaimer/*"
+      ],
+      "images-grid": [
+        "dist/images-grid"
+      ],
+      "images-grid/*": [
+        "dist/images-grid/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
