@@ -11,7 +11,7 @@
     "lib:build": "ng build disclaimer && ng build impressum && ng build dps && ng build images-grid",
     "lib:pack": "cd dist/disclaimer && npm pack && cd ../impressum && npm pack && cd ../dps && npm pack && cd ../images-grid && npm pack && cd ..",
     "lib:publish": "",
-    "lib:upgrade": "cd dist/disclaimer && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd .."
+    "lib:upgrade": "cd projects/disclaimer && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd .."
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
