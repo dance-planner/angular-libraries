@@ -21,10 +21,8 @@ jobs:
         run: |
           echo login to npm registry
           NPM_USER=dance-planner NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=richie.dual@dhbw-richie.de NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@dance-planner npm-cli-login --verbose
-          cd dist/disclaimer
-          npm pack
-          npm publish --verbose
           cd ../impressum
+          ls
           npm pack
           npm publish --verbose
           cd ../dps
