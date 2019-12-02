@@ -13,22 +13,12 @@ jobs:
           echo Installing Dependencies
           sudo npm install -g npm-cli-login
           npm install
-      - name: Run build
+      - name: Build & NPM Login & Publish
         run: |
-          echo run lib:build
-          npm run lib:build
-      - name: NPM Login & Publish
-        run: |
+          ng build impressum
           echo login to npm registry
-          NPM_USER=dance-planner NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=richie.dual@dhbw-richie.de NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@dance-planner npm-cli-login --verbose
+          NPM_USER=dance-planner NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=richie.dual@dhbw-richie.de NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@dance-planner-org npm-cli-login --verbose
           cd dist/impressum
-          ls
+          ls --verbose
           npm pack
           npm publish --verbose
-          cd ../dps
-          npm pack
-          npm publish --verbose
-          cd ../images-grid
-          npm pack
-          npm publish --verbose
-          cd ..
