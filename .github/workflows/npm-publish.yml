@@ -12,6 +12,7 @@ jobs:
         run: |
           echo Installing Dependencies
           sudo npm install -g npm-cli-login
+          npm install -g @angular/cli
           npm install
       - name: Build & NPM Login & Publish
         run: |
