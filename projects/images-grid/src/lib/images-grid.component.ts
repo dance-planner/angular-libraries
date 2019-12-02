@@ -10,11 +10,15 @@ export class ImagesGridComponent {
   @Input() imagesWithLinks: IImageLinkWithDetailsLink[] = [];
   @Input() stylingData: IStylingData = {
     bgColor: 'black',
-    imageWith: '20px',
-    imagePadding: '0vh',
-    frameMargin: '0vh',
-    framePadding: '0vh',
-    frameBackgroundColor: 'rgb(213,54,84)',
+    imageMaxWith: '10px',
+    imageMargin: '10px',
     imageBackgroundColor: 'rgb(93,188, 210)',
+    innerFrameColor: 'rgb(213,54,84)',
+    outerFrameMargin: '3px',
+    outerFramePadding: '1px',
+    outerFrameColor: 'rgb(93,188, 210)',
+    innerFramePadding: '1px',
+    innerFrameMargin: '0px',
+    justifyContent: 'center'
   };
 }

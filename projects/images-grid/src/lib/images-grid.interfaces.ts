@@ -5,10 +5,14 @@ export interface IImageLinkWithDetailsLink {
 
 export interface IStylingData {
   bgColor: string;
-  imageWith: string;
-  imagePadding: string;
-  frameMargin: string;
-  framePadding: string;
-  frameBackgroundColor: string;
+  imageMaxWith: string;
+  imageMargin: string;
+  innerFrameMargin: string;
+  innerFramePadding: string;
+  innerFrameColor: string;
   imageBackgroundColor: string;
+  outerFramePadding: string;
+  outerFrameMargin: string;
+  outerFrameColor: string;
+  justifyContent: string;
 }

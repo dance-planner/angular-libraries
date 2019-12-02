@@ -27,10 +27,10 @@ jobs:
           NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@michael-spengler npm-cli-login --verbose
           cd dist/disclaimer
           npm publish --verbose
-          cd ../dist/impressum
+          cd ../impressum
           npm publish --verbose
-          cd ../dist/dps
+          cd ../dps
           npm publish --verbose
-          cd ../dist/images-grid
+          cd ../images-grid
           npm publish --verbose
           cd ..
