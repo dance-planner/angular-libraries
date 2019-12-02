@@ -13,6 +13,9 @@
     "lib:publish": "",
     "lib:upgrade": "cd dist/disclaimer && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd .."
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.7",
