@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IStylingData } from './disclaimer.interfaces';
 
 @Component({
@@ -7,7 +7,7 @@ import { IStylingData } from './disclaimer.interfaces';
 })
 export class DisclaimerComponent {
 
-  public stylingData: IStylingData = {
+  @Input() public stylingData: IStylingData = {
     textAlign: 'center',
     bgColor: 'inherit'
   };

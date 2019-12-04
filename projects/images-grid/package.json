@@ -1,11 +1,8 @@
 {
-  "name": "@dance-planner/images-grid",
-  "version": "0.3.0",
+  "name": "images-grid-canvas",
+  "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

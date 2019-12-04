@@ -1,24 +1,38 @@
 # ImagesGrid
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Usage
 
-## Code scaffolding
+1. In your HTML add:
+```
+<lib-images-grid [stylingData]="stylingData" [imagesWithLinks]="imagesWithLinks"></lib-images-grid>
+```
 
-Run `ng generate component component-name --project images-grid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project images-grid`.
-> Note: Don't forget to add `--project images-grid` or else it will be added to the default project in your `angular.json` file. 
+2. In your component.ts add e.g.:
+```
+  public stylingData: IStylingData = {
+    bgColor: 'black',
+    imageMaxWith: '10px',
+    imageMargin: '10px',
+    imageBackgroundColor: 'rgb(93,188, 210)',
+    innerFrameColor: 'rgb(213,54,84)',
+    outerFrameMargin: '3px',
+    outerFramePadding: '1px',
+    outerFrameColor: 'rgb(93,188, 210)',
+    innerFramePadding: '1px',
+    innerFrameMargin: '0px',
+    justifyContent: 'center'
+  };
 
-## Build
+  public imagesWithLinks: IImageLinkWithDetailsLink[] = [
+    {
+      imageLink: '',
+      detailsLink: ''
+    }
+  ];
+```
 
-Run `ng build images-grid` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build images-grid`, go to the dist folder `cd dist/images-grid` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test images-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. In your app.module.ts add:
+```
+  imports: [
+    ImagesGridModule,
+```

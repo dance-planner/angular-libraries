@@ -1,11 +1,8 @@
 {
-  "name": "@dance-planner/dps",
-  "version": "0.3.0",
+  "name": "german-data-protection-statement",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
