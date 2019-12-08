@@ -7,8 +7,10 @@
       <div
            [ngStyle]="{'background-color': stylingData.innerFrameColor,'margin': stylingData.innerFrameMargin, 'padding': stylingData.innerFramePadding}">
 
-        <img [ngStyle]="{'background-color': 'black', 'max-width': stylingData.imageMaxWith, 'padding': stylingData.imageMargin }" src="{{item.imageLink}}" alt="o">
-
+        <a target="_blank" href="{{item.detailsLink}}">
+          <img [ngStyle]="{'background-color': 'black', 'max-width': stylingData.imageMaxWith, 'padding': stylingData.imageMargin }"
+               src="{{item.imageLink}}" alt="o">
+        </a>
       </div>
     </div>
   </span>

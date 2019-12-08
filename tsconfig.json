@@ -42,6 +42,18 @@
       ],
       "images-grid/*": [
         "dist/images-grid/*"
+      ],
+      "contact-options": [
+        "dist/contact-options"
+      ],
+      "contact-options/*": [
+        "dist/contact-options/*"
+      ],
+      "navbar": [
+        "dist/navbar"
+      ],
+      "navbar/*": [
+        "dist/navbar/*"
       ]
     }
   },

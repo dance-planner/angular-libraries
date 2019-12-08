@@ -1,0 +1,10 @@
+<p></p>
+<!-- <fa-icon slot="start" [icon]="faHandPointLeft"></fa-icon>
+
+<fa-icon slot="end" [icon]="faHandPointRight"></fa-icon> -->
+
+<span *ngFor="let contactOption of contactOptions">
+  <a href="{{contactOption.hyperLink}}">
+    <i class="{{contactOption.iconClass}}" aria-hidden="true"></i>
+  </a>
+</span>

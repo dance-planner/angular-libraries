@@ -1,14 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IImageLinkWithDetailsLink } from '../../../images-grid/src/lib/images-grid.interfaces';
+import { IContactData } from '../../../contact-options/src/public-api';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'test';
   imageLinksWithDetailLinks: IImageLinkWithDetailsLink[] = this.getData();
+  public contactOptions: IContactData[] = [];
+
+  public ngOnInit() {
+    this.prepareContactData();
+  }
+
+  private prepareContactData() {
+    this.contactOptions.push({
+      hyperLink: 'https://www.facebook.com/michael.spengler.5686',
+      iconClass: 'fa fa-facebook-official fa-3x',
+      padding: '0'
+    });
+
+    this.contactOptions.push({
+      hyperLink: 'https://chat.whatsapp.com/FNVd44Xn6TfGgzTf6PE2S0',
+      iconClass: 'fa fa-whatsapp fa-3x',
+      padding: '1.7'
+    });
+
+    this.contactOptions.push({
+      hyperLink: 'https://t.me/joinchat/CocyExVjtoAZARi6HCtmZA',
+      iconClass: 'fa fa-telegram fa-3x',
+      padding: '1.7'
+    });
+
+    this.contactOptions.push({
+      hyperLink: 'mailto:info@dance-planner.de',
+      iconClass: 'fa fa-envelope-o fa-3x',
+      padding: '1.7'
+    });
+
+  }
+
   private getData() {
     return [
       {

@@ -260,6 +260,76 @@
           }
         }
       }
+    },
+    "contact-options": {
+      "projectType": "library",
+      "root": "projects/contact-options",
+      "sourceRoot": "projects/contact-options/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/contact-options/tsconfig.lib.json",
+            "project": "projects/contact-options/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/contact-options/src/test.ts",
+            "tsConfig": "projects/contact-options/tsconfig.spec.json",
+            "karmaConfig": "projects/contact-options/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/contact-options/tsconfig.lib.json",
+              "projects/contact-options/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "navbar": {
+      "projectType": "library",
+      "root": "projects/navbar",
+      "sourceRoot": "projects/navbar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/navbar/tsconfig.lib.json",
+            "project": "projects/navbar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/navbar/src/test.ts",
+            "tsConfig": "projects/navbar/tsconfig.spec.json",
+            "karmaConfig": "projects/navbar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/navbar/tsconfig.lib.json",
+              "projects/navbar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "dps"
 }

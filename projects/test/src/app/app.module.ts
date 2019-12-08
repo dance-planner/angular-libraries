@@ -6,13 +6,21 @@ import { ImpressumModule } from '../../../impressum/src/public-api';
 import { ImagesGridModule } from '../../../images-grid/src/public-api';
 import { DisclaimerModule } from '../../../disclaimer/src/public-api';
 import { DpsModule } from '../../../dps/src/public-api';
+import { ContactOptionsModule } from '../../../contact-options/src/public-api';
+import { NavbarModule } from '../../../navbar/src/lib/navbar.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, ImpressumModule, DpsModule, ImagesGridModule, DisclaimerModule
+    NavbarModule,
+    BrowserModule,
+    ImpressumModule,
+    ContactOptionsModule,
+    DpsModule,
+    ImagesGridModule,
+    DisclaimerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
