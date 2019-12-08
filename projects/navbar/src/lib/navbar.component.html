@@ -1,17 +1,12 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<ul class="topnav">
+  <span *ngFor="let item of navBarData">
+    <li><a class="{{item.cssClass}}" href="{{item.href}}">{{item.text}}</a></li>
+  </span>
+</ul>
 
-<div class="topnav" id="myTopnav">
-  <a class="navbarText ellipsis" style="font-size: 24px; text-align: left" (click)="clickTitle()">{{titleLong}}</a>
-  <!-- <a (click)="clickFind()" [ngClass]="{active: router.url==='/'}" style="font-size: 21px">{{texts.info.searchEvents}}</a>
-  <a (click)="clickNewEvent()" [ngClass]="{active: router.url==='/new-event'}" style="font-size: 21px">{{texts.info.createEvents}}</a>
-  <a (click)="clickUseAsApp()" style="font-size: 21px">{{texts.info.useAsApp}}</a> -->
-  <!-- <a (click)="clickForFree()" [ngClass]="{active: router.url==='/for-free'}" style="font-size: 21px">{{texts.info.forFree}}</a>
-  <a (click)="clickFindPAndC()" [ngClass]="{active: router.url==='/partnerAndCommunity'}" style="font-size: 21px">{{texts.info.pAndC}}</a> -->
-  <!-- <a (click)="clickPlaylistsAndTutorials()" [ngClass]="{active: router.url==='/playlistsAndTutorials'}" style="font-size: 21px">{{texts.info.playlistsAndTutorials}}</a> -->
-  <!-- <a (click)="clickFindDanceSchool()" style="font-size: 21px">{{texts.info.findDanceSchool}}</a> -->
-  <!-- <a (click)="clickFurtherFunctions()" [ngClass]="{active: router.url==='/furtherFunctions'}" style="font-size: 21px">{{texts.info.furtherFunctions}}</a>
-  <a (click)="clickContact()" [ngClass]="{active: router.url==='/contact'}" style="font-size: 21px">{{texts.info.contact}}</a>
-  <a class="icon" (click)="myFunction()" style="font-size:24px">
-    <i class="fa fa-bars"></i>
-  </a> -->
+<div style="padding:0 16px;">
+  <h2>Responsive Topnav Example</h2>
+  <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+  <h4>Resize the browser window to see the effect.</h4>
 </div>

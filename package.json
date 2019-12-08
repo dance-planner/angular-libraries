@@ -11,7 +11,7 @@
     "lib:build": "ng build disclaimer && ng build impressum && ng build dps && ng build images-grid && ng build contact-options",
     "lib:pack": "cd dist/disclaimer && npm pack && cd ../impressum && npm pack && cd ../dps && npm pack && cd ../images-grid && npm pack && cd ..",
     "lib:publish": "cd dist/disclaimer && npm publish && cd ../contact-options && npm publish && cd ../impressum && npm publish && cd ../dps && npm publish && cd ../images-grid && npm publish && cd ..",
-    "lib:upgrade": "cd projects/disclaimer && npm version minor && cd ../contact-options && npm version minor && cd ../impressum && npm version minor && cd ../dps && npm version minor && cd ../images-grid && npm version minor && cd ..",
+    "lib:upgrade": "cd projects/disclaimer && npm version patch && cd ../contact-options && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd ..",
     "app:build": "ng build test --prod --output-path docs"
   },
   "publishConfig": {
