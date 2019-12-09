@@ -3,7 +3,7 @@ import { IContactData } from '../../../contact-options/src/public-api';
 import { IIndividualImpressumData } from '../../../impressum/src/public-api';
 import { IDPSData } from '../../../dps/src/public-api';
 import { INavbarData } from '../../../navbar/src/public-api';
-import { IModel } from './app.interfaces';
+import { ITypeAheadConfig } from '../../../../dist/selection-typeahead/lib/selection-typeahead.interfaces';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +16,22 @@ export class AppComponent implements OnInit {
   public individualImpressumData: IIndividualImpressumData = this.getImpressumData();
   public contactOptions: IContactData[] = this.getContactData();
   public individualDPSData: IDPSData = this.getDPSData();
-
   public items: string[] = this.getItems();
   public placeholder = 'What are you looking for?';
   public ngStyle = this.getStyling();
+  public typeAheadConfig: ITypeAheadConfig = this.getTypeAheadConfig();
+
+  public getTypeAheadConfig(): ITypeAheadConfig {
+    return {
+      debounceTimeInMilliSeconds: 200,
+      showAfterXLetters: 1,
+      maxAmountOfDisplayedItems: 10
+    };
+  }
+
+  public onSetValue(value: string) {
+    alert(value);
+  }
 
   public getStyling(): any {
     // whatever your style is ... :)

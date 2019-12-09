@@ -2,7 +2,7 @@
 
 <!-- <lib-images-grid [imagesWithLinks]=imageLinksWithDetailLinks></lib-images-grid> -->
 <!-- <lib-contact-options [contactOptions]="contactOptions"></lib-contact-options> -->
-<lib-selection-typeahead [ngStyle]="ngStyle" [items]="models" [placeholder]="placeholder"></lib-selection-typeahead>
+<lib-selection-typeahead [items]="items" [placeholder]="placeholder" [typeAheadConfig]="typeAheadConfig" [ngStyle]="ngStyle" (setValue)="onSetValue($event)"></lib-selection-typeahead>
 <lib-dps [individualDPSData]="individualDPSData"></lib-dps>
 <lib-impressum [individualImpressumData]="individualImpressumData"></lib-impressum>
 <lib-disclaimer></lib-disclaimer>
