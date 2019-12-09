@@ -11,7 +11,7 @@
     "lib:build": "ng build disclaimer && ng build impressum && ng build dps && ng build images-grid && ng build contact-options",
     "lib:pack": "cd dist/disclaimer && npm pack && cd ../impressum && npm pack && cd ../dps && npm pack && cd ../images-grid && npm pack && cd ..",
     "lib:publish": "cd dist/disclaimer && npm publish && cd ../contact-options && npm publish && cd ../impressum && npm publish && cd ../dps && npm publish && cd ../images-grid && npm publish && cd ..",
-    "lib:upgrade": "cd projects/disclaimer && npm version patch && cd ../contact-options && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd ..",
+    "lib:upgrade": "cd projects/disclaimer && npm version patch && cd ../contact-options && npm version patch && cd ../impressum && npm version patch && cd ../dps && npm version patch && cd ../images-grid && npm version patch && cd ../selection-typeahead && npm version patch && cd ..",
     "app:build": "ng build test --prod --output-path docs"
   },
   "publishConfig": {
@@ -27,6 +27,7 @@
     "@angular/platform-browser": "~8.2.7",
     "@angular/platform-browser-dynamic": "~8.2.7",
     "@angular/router": "~8.2.7",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "npm-cli-login": "^0.1.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

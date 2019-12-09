@@ -54,6 +54,12 @@
       ],
       "navbar/*": [
         "dist/navbar/*"
+      ],
+      "selection-typeahead": [
+        "dist/selection-typeahead"
+      ],
+      "selection-typeahead/*": [
+        "dist/selection-typeahead/*"
       ]
     }
   },

@@ -1,24 +1,17 @@
 # Navbar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Usage
+1. Add the following in your html  
+```
+<lib-navbar ></lib-navbar>
+```
 
-## Code scaffolding
+2. Add the following instance attribute in your ...component.ts  
+```
+```
 
-Run `ng generate component component-name --project navbar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project navbar`.
-> Note: Don't forget to add `--project navbar` or else it will be added to the default project in your `angular.json` file. 
-
-## Build
-
-Run `ng build navbar` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build navbar`, go to the dist folder `cd dist/navbar` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test navbar` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. Add the following in your app.module.ts  
+```
+  imports: [
+    NavbarModule,
+```

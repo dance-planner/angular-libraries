@@ -8,12 +8,14 @@ import { DisclaimerModule } from '../../../disclaimer/src/public-api';
 import { DpsModule } from '../../../dps/src/public-api';
 import { ContactOptionsModule } from '../../../contact-options/src/public-api';
 import { NavbarModule } from '../../../navbar/src/lib/navbar.module';
+import { SelectionTypeaheadModule } from '../../../selection-typeahead/src/public-api';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    SelectionTypeaheadModule,
     NavbarModule,
     BrowserModule,
     ImpressumModule,

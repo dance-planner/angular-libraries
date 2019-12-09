@@ -3,19 +3,40 @@ import { IContactData } from '../../../contact-options/src/public-api';
 import { IIndividualImpressumData } from '../../../impressum/src/public-api';
 import { IDPSData } from '../../../dps/src/public-api';
 import { INavbarData } from '../../../navbar/src/public-api';
+import { IModel } from './app.interfaces';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
-  public title = 'Fancy Cars';
   public navBarData: INavbarData[] = this.getNavBarData();
   public individualImpressumData: IIndividualImpressumData = this.getImpressumData();
   public contactOptions: IContactData[] = this.getContactData();
   public individualDPSData: IDPSData = this.getDPSData();
 
+  public items: string[] = this.getItems();
+  public placeholder = 'What are you looking for?';
+  public ngStyle = this.getStyling();
+
+  public getStyling(): any {
+    // whatever your style is ... :)
+    return {
+      'background-color': 'white',
+      color: 'black'
+    };
+  }
+
+  public getItems(): string[] {
+    // whatever your items are ... :)
+    const models: string[] = [];
+    models.push('Alpha');
+    models.push('Porsche');
+    models.push('Tesla');
+    return models;
+  }
 
   public ngOnInit() {
 
@@ -71,284 +92,6 @@ export class AppComponent implements OnInit {
     });
 
     return contactData;
-  }
-
-  private getData() {
-    return [
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }, {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-10-09T21:04:13.645Z-Zouk%20Darmstadt%20Level%202.jpeg',
-        detailsLink: 'https://dance-planner.de/?eventId=1570655053843'
-      },
-      {
-        imageLink: 'https://fance-stiftung.de/api/events/img/2019-08-05T19:45:46.145Z-TangoFance.jpg',
-        detailsLink: 'https://dance-planner.de/?eventId=1565034346498'
-      }
-
-    ];
   }
 
   private getDPSData(): IDPSData {
