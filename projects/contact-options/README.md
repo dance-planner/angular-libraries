@@ -1,24 +1,15 @@
-# ContactOptions
+# Contact Options
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+## Usage
 
-## Code scaffolding
+**In your HTML add the following:**
+```
 
-Run `ng generate component component-name --project contact-options` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project contact-options`.
-> Note: Don't forget to add `--project contact-options` or else it will be added to the default project in your `angular.json` file. 
+```
 
-## Build
+**In your app.module.ts add the following:**
+```
+  imports: [
+    ContactOptionsModule,
+```
 
-Run `ng build contact-options` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build contact-options`, go to the dist folder `cd dist/contact-options` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test contact-options` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

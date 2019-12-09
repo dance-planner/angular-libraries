@@ -1,12 +1,12 @@
 # Typeahead
 
 ## Usage
-1. Add the following in your html  
+**Add the following in your html**  
 ```
 <lib-selection-typeahead [items]="items" [placeholder]="placeholder" [typeAheadConfig]="typeAheadConfig" [ngStyle]="ngStyle" (setValue)="onSetValue($event)"></lib-selection-typeahead>
 ```
 
-2. Add the following instance attribute in your ...component.ts  
+**Add the following instance attribute in your ...component.ts**  
 ```
   public items: string[] = this.getItems();
   public placeholder = 'What are you looking for?';
@@ -44,7 +44,7 @@
 
 ```
 
-3. Add the following in your app.module.ts  
+**Add the following in your app.module.ts**  
 ```
   imports: [
     SelectionTypeaheadModule,

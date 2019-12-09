@@ -1,12 +1,12 @@
 # Disclaimer
 
 ## Usage
-1. Add the following in your html  
+**Add the following in your html**  
 ```
 <lib-disclaimer [stylingData]="stylingData"></lib-disclaimer>
 ```
 
-2. Add the following instance attribute in your ...component.ts
+**Add the following instance attribute in your ...component.ts**  
 ```
   public stylingData: IStylingData = {
     textAlign: '...',
@@ -14,7 +14,7 @@
   };
 ```
 
-3. Add the following in your app.module.ts
+**Add the following in your app.module.ts**
 ```
   imports: [
     DisclaimerModule,

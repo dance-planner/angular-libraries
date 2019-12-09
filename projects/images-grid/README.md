@@ -2,12 +2,12 @@
 
 ## Usage
 
-1. In your HTML add:
+**In your HTML add:**
 ```
 <lib-images-grid [stylingData]="stylingData" [imagesWithLinks]="imagesWithLinks"></lib-images-grid>
 ```
 
-2. In your component.ts add e.g.:
+**In your component.ts add e.g.:**
 ```
   public stylingData: IStylingData = {
     bgColor: 'black',
@@ -31,7 +31,7 @@
   ];
 ```
 
-3. In your app.module.ts add:
+**In your app.module.ts add:**  
 ```
   imports: [
     ImagesGridModule,

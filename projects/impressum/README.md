@@ -1,12 +1,12 @@
 # Impressum
 
 ## Usage
-1. Add the following in your html  
+**Add the following in your html**  
 ```
 <lib-impressum [individualImpressumData]="individualImpressumData"></lib-impressum>
 ```
 
-2. Add the following instance attribute in your ...component.ts  
+**Add the following instance attribute in your ...component.ts**  
 ```
   public individualImpressumData: IIndividualImpressumData = {
     name: 'your name...',
@@ -21,7 +21,7 @@
   };
 ```
 
-3. Add the following in your app.module.ts  
+**Add the following in your app.module.ts**  
 ```
   imports: [
     ImpressumModule,
