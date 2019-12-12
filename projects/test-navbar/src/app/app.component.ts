@@ -1,13 +1,12 @@
-# Navbar
+import { Component } from '@angular/core';
+import { INavbarData } from '../../../navbar/src/public-api';
 
-## Usage
-**Add the following in your html**  
-```
-<lib-navbar [navBarData]="navBarData" (clickMenuEntry)="onClickMenuEntry($event)"></lib-navbar>
-```
-
-**Add the following in your ...component.ts**  
-```
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
   public navBarData: INavbarData = this.getNavBarData();
 
   private getNavBarData(): INavbarData {
@@ -36,12 +35,4 @@
   public onClickMenuEntry(target: string) {
     alert(target);
   }
-```
-
-**Add the following in your app.module.ts**  
-```
-  imports: [
-    NavbarModule,
-```
-
-To use the full screen make sure your body style="margin: 0;"
+}

@@ -15,6 +15,7 @@ export class SelectionTypeaheadComponent implements OnInit {
   @Input() public placeholder = '';
   @Input() public ngStyle = this.getStyling();
   @Input() public typeAheadConfig: ITypeAheadConfig = this.getTypeAheadConfig();
+  @Input() public id = '';
   @Output() setValue = new EventEmitter<string>();
 
   public selectedItem = '';

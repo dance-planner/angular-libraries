@@ -1,4 +1,4 @@
-<input id="typeahead-basic" type="text" class="form-control typeahead logoRot" [(ngModel)]="selectedItem"
+<input id="{{id}}" type="text" [(ngModel)]="selectedItem"
 (click)="clearItemField()" [ngbTypeahead]="searchItem" value="{{selectedItem}}"
 (selectItem)="handleItemSelected($event)" placeholder="{{placeholder}}"
 [editable]='false' [ngStyle]="ngStyle"/>

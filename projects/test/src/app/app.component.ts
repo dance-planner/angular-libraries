@@ -3,7 +3,8 @@ import { IContactData } from '../../../contact-options/src/public-api';
 import { IIndividualImpressumData } from '../../../impressum/src/public-api';
 import { IDPSData } from '../../../dps/src/public-api';
 import { INavbarData } from '../../../navbar/src/public-api';
-import { ITypeAheadConfig } from '../../../../dist/selection-typeahead/lib/selection-typeahead.interfaces';
+import { Router } from '@angular/router';
+import { ITypeAheadConfig } from '../../../selection-typeahead/src/lib/selection-typeahead.interfaces';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +13,20 @@ import { ITypeAheadConfig } from '../../../../dist/selection-typeahead/lib/selec
 })
 
 export class AppComponent implements OnInit {
-  public navBarData: INavbarData[] = this.getNavBarData();
+  public navBarData: INavbarData = this.getNavBarData();
   public individualImpressumData: IIndividualImpressumData = this.getImpressumData();
   public contactOptions: IContactData[] = this.getContactData();
   public individualDPSData: IDPSData = this.getDPSData();
   public items: string[] = this.getItems();
-  public placeholder = 'What are you looking for?';
+  public placeholder = 'Wonach suchen Sie?';
   public ngStyle = this.getStyling();
   public typeAheadConfig: ITypeAheadConfig = this.getTypeAheadConfig();
+
+  public constructor(private router: Router) {}
+
+  public onClickMenuEntry(target: string) {
+    this.router.navigateByUrl(target);
+  }
 
   public getTypeAheadConfig(): ITypeAheadConfig {
     return {
@@ -37,6 +44,10 @@ export class AppComponent implements OnInit {
     // whatever your style is ... :)
     return {
       'background-color': 'white',
+      'min-height': '3vh',
+      'min-width': '70%',
+      'text-align': 'center',
+      'margin-top': '20px',
       color: 'black'
     };
   }
@@ -54,27 +65,26 @@ export class AppComponent implements OnInit {
 
   }
 
-  private getNavBarData(): any {
-    return [{
-      cssClass: 'active',
-      href: '/',
-      text: 'Startseite'
-    },
-    {
-      cssClass: '',
-      href: '/models',
-      text: 'Modelle'
-    },
-    {
-      cssClass: '',
-      href: '/dashboard',
-      text: 'Dashboard'
-    },
-    {
-      cssClass: 'right',
-      href: '/about',
-      text: 'Über Uns'
-    }];
+  private getNavBarData(): INavbarData {
+    return {
+      logoURL: 'http://localhost:3000/api/app/app-images/logo.png',
+      appTitle: 'App Title',
+      menuEntries: [{
+        isActive: true,
+        text: 'do this',
+        href: '/doThis',
+      },
+      {
+        isActive: false,
+        text: 'do that',
+        href: '/doThat',
+      },
+      {
+        isActive: false,
+        text: 'do it',
+        href: '/doIt',
+      }]
+    };
   }
 
   private getContactData(): IContactData[] {

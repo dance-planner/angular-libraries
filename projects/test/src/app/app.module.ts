@@ -9,12 +9,15 @@ import { DpsModule } from '../../../dps/src/public-api';
 import { ContactOptionsModule } from '../../../contact-options/src/public-api';
 import { NavbarModule } from '../../../navbar/src/lib/navbar.module';
 import { SelectionTypeaheadModule } from '../../../selection-typeahead/src/public-api';
-
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
+    RouterModule,
     SelectionTypeaheadModule,
     NavbarModule,
     BrowserModule,

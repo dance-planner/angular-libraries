@@ -1,17 +1,13 @@
-import { Component, Input, Output, EventEmitter, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { INavbarData } from '../public-api';
 
-export interface INavbarData {
-  cssClass: string;
-  text: string;
-  href: string;
-}
 
 @Component({
   selector: 'lib-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
   public static firstFancyCity = '';
   public static forFreePartners = [];
@@ -19,13 +15,26 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
 
-  @Input() public titleLong = 'Your Title';
-  @Input() navBarData: INavbarData[] = [];
-  @Output() showUseAsAppDetail = new EventEmitter<void>();
-  @Output() findDanceSchool = new EventEmitter<void>();
-  public readyForPrompt: boolean;
+  @Input() navBarData: INavbarData;
+  @Output() clickMenuEntry = new EventEmitter<string>();
+    public readyForPrompt: boolean;
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    // alert(this.navBarData.logoURL);
+  }
+
+  public clickEntry(target: string) {
+    this.myFunction();
+    for (const entry of this.navBarData.menuEntries) {
+      if (entry.href === target) {
+        entry.isActive = true;
+      } else {
+        entry.isActive = false;
+      }
+    }
+
+    this.clickMenuEntry.emit(target);
+  }
 
   public myFunction() {
     const x = document.getElementById('myTopnav');
@@ -35,7 +44,6 @@ export class NavbarComponent implements OnInit {
       x.className = 'topnav';
     }
   }
-
 
   public clickTitle() {
   }

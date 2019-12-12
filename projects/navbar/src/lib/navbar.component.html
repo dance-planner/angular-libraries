@@ -1,6 +1,16 @@
-<ul class="topnav">
-  <span *ngFor="let item of navBarData">
-    <li><a class="{{item.cssClass}}" href="{{item.href}}">{{item.text}}</a></li>
-  </span>
-</ul>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="topnav" id="myTopnav" style="margin-bottom:1em">
+    <!-- <app-rotating-logo></app-rotating-logo> -->
+      <img class="logo" src="{{navBarData.logoURL}}" style="width: 58px; float: left; text-align: left; margin-left: 3px; margin-top: 3.5px;" alt="">
+  <a class="ellipsis" style="font-size: 25px; text-align: center; margin-left: 11px" (click)="clickTitle()">
+    {{navBarData.appTitle}}</a>
+
+    <span *ngFor="let item of navBarData.menuEntries">
+      <a style="font-size: 21px" class="hide" [ngClass]="{active: item.isActive}"  (click)="clickEntry(item.href)">{{item.text}}</a>
+    </span>
+  <!-- <a  (click)="clickFind()" [ngClass]="{active: router.url==='/', hide: true}" style="font-size: 21px">{{filter}}</a> -->
+  <a class="icon" (click)="myFunction()" style="font-size:24px">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
