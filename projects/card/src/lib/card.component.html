@@ -1,15 +1,37 @@
-<div (click)="clickCard()">
-
-  <h3>
-    {{title}}
+<div [ngStyle]="cardStyling">
+  <h3 (click)="clickCard()" [ngStyle]="titleStyling">
+    {{cardData.title}}
   </h3>
 
-  <h6>
-    {{info}}
+  <h6 (click)="clickCard()" [ngStyle]="infoStyling">
+    {{cardData.info}}
   </h6>
 
-  <p>
-    {{details}}
-  </p>
+  <button (click)="clickShare()">
+    {{shareButtonText}}
+  </button>
+  <div *ngIf="shareMode">
+    {{ shareLongText }} <i (click)="copyText(linkToThisItem)" class="fa fa-copy fa-1x" style="padding-left: 1%"></i>
+    <p></p>
+
+    <input #userinput type="text" value="{{linkToThisItem}}" contenteditable="true" style="display: none">
+    <a target="_blank" href="{{ linkToThisItem }}">{{ linkToThisItem }} </a>
+
+  </div>
+  <div (click)="clickCard()" [ngStyle]="imageDivStyling">
+    <img src="" alt="super">
+  </div>
+
+  <div (click)="clickCard()" *ngIf="showDetails" [ngStyle]="detailsStyling">
+    <p>
+      {{cardData.details}}
+    </p>
+    <a target="_blank" href="{{ linkToFurtherInfo }}">
+      <button>
+        {{ furtherInfo }}
+      </button>
+    </a>
+
+  </div>
 
 </div>
