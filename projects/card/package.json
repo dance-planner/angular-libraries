@@ -1,8 +1,10 @@
 {
-  "name": "card",
-  "version": "0.0.1",
+  "name": "ng-card",
+  "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
+  },
+  "dependencies": {
   }
 }

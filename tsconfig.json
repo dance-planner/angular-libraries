@@ -66,6 +66,24 @@
       ],
       "card/*": [
         "dist/card/*"
+      ],
+      "cards": [
+        "dist/cards"
+      ],
+      "cards/*": [
+        "dist/cards/*"
+      ],
+      "q-and-a": [
+        "dist/q-and-a"
+      ],
+      "q-and-a/*": [
+        "dist/q-and-a/*"
+      ],
+      "ng-q-and-a": [
+        "dist/ng-q-and-a"
+      ],
+      "ng-q-and-a/*": [
+        "dist/ng-q-and-a/*"
       ]
     }
   },

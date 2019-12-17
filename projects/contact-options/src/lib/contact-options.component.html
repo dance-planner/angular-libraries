@@ -6,5 +6,8 @@
 <span *ngFor="let contactOption of contactOptions">
   <a href="{{contactOption.hyperLink}}">
     <i class="{{contactOption.iconClass}}" aria-hidden="true"></i>
+    ok
+
+    <fa-icon slot="start" [icon]="faHandPointLeft"></fa-icon>
   </a>
 </span>

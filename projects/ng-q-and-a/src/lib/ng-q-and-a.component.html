@@ -1,0 +1,65 @@
+<div style="text-align: center;">
+
+  <span *ngIf="mode===''">
+    <button (click)="clickAddQAndAPairs()">
+      Q & A Paare hinzufügen
+    </button>
+
+    <button (click)="clickLoadQAndAPairs()">
+      Datensatz Laden
+    </button>
+  </span>
+
+  <span *ngIf="mode!==''">
+    <span *ngIf="mode==='Add'">
+      <input [(ngModel)]="qaPair.question" type="text" name="question1" id="question1" placeholder="Frage...">
+      <p></p>
+      <input [(ngModel)]="qaPair.answer" type="text" name="answer1" id="answer1" placeholder="Anwort...">
+      <p></p>
+      <br>
+      <button *ngIf="qaPair.answer!=='' && qaPair.question!==''" (click)="clickAdd()">
+        Hinzufügen
+      </button>
+    </span>
+    <p></p>
+
+    <span *ngIf="mode==='Load'">
+      <input [(ngModel)]="assetId" type="text" placeholder="Asset Id eingeben...">
+      <button (click)="loadAsset(assetId)">
+        Laden
+      </button>
+    </span>
+    <div *ngIf="qaPairCollection.length>0">
+      <br>
+      Questions So Far:
+
+      <span *ngFor="let item of qaPairCollection">
+        <br>
+        The question is {{item.question}} <br>
+        The answer is {{item.answer}}
+      </span>
+
+      <p><br></p>
+      <button (click)="clickSave()">
+        Speichern
+      </button>
+
+    </div>
+
+    <p></p>
+
+    <button *ngIf="qaPairCollection.length>2" (click)="clickGenerateXWordPuzzle()">
+      Rätsel Generieren
+    </button>
+
+    <button *ngIf="qaPairCollection.length>0" (click)="clickShowDataInJSONFormat()">
+      Show Data In JSON Format
+    </button>
+
+    <span class="jsonDisplay" *ngIf="showDataInJSONFormat">
+      <p></p>
+      {{qaPairCollectionAsString}}
+
+    </span>
+  </span>
+</div>

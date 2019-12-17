@@ -9,19 +9,17 @@ import { ICardData } from './card.interfaces';
 export class CardComponent implements OnInit {
   constructor() { }
 
-  @Input() public cardData: ICardData = this.getDefaultData();
+  @Input() public card: ICardData = this.getDefaultData();
   @Input() public cardStyling: any = this.getDefaultStyle();
   @Input() public titleStyling: any = this.getTitleDefaultStyle();
   @Input() public infoStyling: any = this.getInfoDefaultStyle();
   @Input() public detailsStyling: any = this.getDetailsStyling();
   @Input() public imageDivStyling: any = this.getImageDivDefaultStyle();
   @Input() public shareButtonText: any = 'Invite Friends';
-  @Input() public linkToThisItem: any = 'https://somewhere-here';
 
   public showDetails = false;
   public shareMode = false;
   public shareLongText = 'Share This Link to Invite Friends';
-  public linkToFurtherInfo = 'https://somewhere-else';
   public furtherInfo = 'Further Information';
 
   public clickShare() {
@@ -90,7 +88,10 @@ export class CardComponent implements OnInit {
     return {
       title: 'my title',
       info: 'my info',
-      details: 'my details'
+      details: 'my details',
+      linkToThisItem: 'whatever-link',
+      linkToFurtherInfo: 'somewhere-else',
+      imageURL: 'https://fance-stiftung.de/api/app/app-images/logo.png'
     };
   }
 

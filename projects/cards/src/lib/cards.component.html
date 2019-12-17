@@ -1,0 +1,7 @@
+<cdk-virtual-scroll-viewport itemSize="{{itemSize}}" [ngStyle]="{'height.px': viewPortHeight}">
+
+  <div *cdkVirtualFor="let card of cards">
+    <lib-card [cardStyling]="cardStyling" [card]="card"></lib-card>
+  </div>
+
+</cdk-virtual-scroll-viewport>

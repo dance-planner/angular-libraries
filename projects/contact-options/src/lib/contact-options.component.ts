@@ -9,8 +9,8 @@ import {faHandPointLeft, faHandPointRight} from '@fortawesome/fontawesome-free';
 export class ContactOptionsComponent implements OnInit {
 
   @Input() contactOptions: IContactData[] = [];
-  faHandPointLeft: any;
-  faHandPointRight: any;
+  public faHandPointLeft: any;
+  public faHandPointRight: any;
 
   constructor() {
     this.faHandPointLeft = faHandPointLeft;
