@@ -11,7 +11,7 @@
   </span>
 
   <span *ngIf="mode!==''">
-    <span *ngIf="mode==='Add'">
+    <span *ngIf="mode==='Add' || mode==='edit'">
       <input [(ngModel)]="qaPair.question" type="text" name="question1" id="question1" placeholder="Frage...">
       <p></p>
       <input [(ngModel)]="qaPair.answer" type="text" name="answer1" id="answer1" placeholder="Anwort...">
@@ -29,6 +29,7 @@
         Laden
       </button>
     </span>
+
     <div *ngIf="qaPairCollection.length>0">
       <br>
       Questions So Far:
@@ -43,7 +44,9 @@
       <button (click)="clickSave()">
         Speichern
       </button>
-
+      <h1 *ngIf="assetId!==''">
+        Die Asset Id lautet: {{assetId}}
+      </h1>
     </div>
 
     <p></p>

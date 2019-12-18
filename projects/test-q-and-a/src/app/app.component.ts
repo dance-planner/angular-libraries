@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-q-and-a';
-  persistencyURLForGetRequest = 'http://localhost:3000/getAsset';
-  persistencyURLForPostRequest = 'http://localhost:3000/addAsset';
+  // public baseURL = 'http://localhost:3000'
+  public backendBaseURL = 'http://localhost:3000';
+  public persistencyURLForGetRequest = `${this.backendBaseURL}/getAsset`;
+  public persistencyURLForAddRequest = `${this.backendBaseURL}/addAsset`;
+  public persistencyURLForUpdateRequest = `${this.backendBaseURL}/updateAsset/asset`;
 }

@@ -23,6 +23,8 @@
 
 **Add the following in your app.module.ts**  
 ```
+  import { ImpressumModule } from 'german-impressum'
+
   imports: [
     ImpressumModule,
 ```

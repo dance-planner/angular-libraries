@@ -40,6 +40,8 @@
 
 **Add the following in your app.module.ts**  
 ```
+  import { NavbarModule } from 'ng-responsive-navbar';
+  
   imports: [
     NavbarModule,
 ```

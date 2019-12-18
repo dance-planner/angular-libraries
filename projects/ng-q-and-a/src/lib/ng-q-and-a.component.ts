@@ -13,7 +13,9 @@ export interface IQAPair {
 export class NgQAndAComponent implements OnInit {
 
   @Input() persistencyURLForGetRequest;
-  @Input() persistencyURLForPostRequest;
+  @Input() persistencyURLForAddRequest;
+  @Input() persistencyURLForUpdateRequest;
+
   public mode = '';
   public assetId = '';
   public showDataInJSONFormat = false;
@@ -47,12 +49,21 @@ export class NgQAndAComponent implements OnInit {
   public loadAsset(id: string) {
     const urlToLoadData = `${this.persistencyURLForGetRequest}/${id}`;
     this.service.get(urlToLoadData)
-      .subscribe((result) => this.qaPairCollection = result);
+      .subscribe((result) =>  {
+        this.qaPairCollection = result;
+        this.mode = 'edit';
+      });
   }
 
   public clickSave() {
-    this.service.post(this.persistencyURLForPostRequest, this.qaPairCollection)
-      .subscribe();
+    if (this.assetId === '') {
+      this.service.post(this.persistencyURLForAddRequest, this.qaPairCollection)
+      .subscribe((result) => this.assetId = result.randomAssetId);
+    } else {
+      const urlToUpdateData = `${this.persistencyURLForUpdateRequest}/${this.assetId}`;
+      this.service.post(urlToUpdateData, this.qaPairCollection)
+      .subscribe((result) => this.assetId = result.randomAssetId);
+    }
   }
 
   public clickLoadQAndAPairs() {
