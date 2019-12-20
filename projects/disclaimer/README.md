@@ -16,6 +16,8 @@
 
 **Add the following in your app.module.ts**
 ```
+  import { DisclaimerModule } from 'german-legal-disclaimer'
+
   imports: [
     DisclaimerModule,
 ```

@@ -1,6 +1,13 @@
 {
   "name": "ng-simple-typeahead",
-  "version": "0.0.7",
+  "version": "0.0.9",
+  "author": "michael spengler",
+  "license": "GNU GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-planner/angular-libraries",
+    "directory": "projects/selection-typeahead"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

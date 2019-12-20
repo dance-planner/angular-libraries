@@ -46,6 +46,8 @@
 
 **Add the following in your app.module.ts**  
 ```
+  import { SelectionTypeaheadModule } from 'ng-simple-typeahead';
+
   imports: [
     SelectionTypeaheadModule,
 ```

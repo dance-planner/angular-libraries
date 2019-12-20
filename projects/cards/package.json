@@ -1,6 +1,13 @@
 {
   "name": "ng-cards",
   "version": "0.0.1",
+  "author": "michael spengler",
+  "license": "GNU GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-planner/angular-libraries",
+    "directory": "projects/cards"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",

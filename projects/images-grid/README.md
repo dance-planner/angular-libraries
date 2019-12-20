@@ -33,6 +33,8 @@
 
 **In your app.module.ts add:**  
 ```
+  import { ImagesGridModule } from 'images-grid-canvas';
+
   imports: [
     ImagesGridModule,
 ```

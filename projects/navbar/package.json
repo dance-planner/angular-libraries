@@ -1,6 +1,13 @@
 {
   "name": "ng-responsive-navbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "michael spengler",
+  "license": "GNU GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-planner/angular-libraries",
+    "directory": "projects/navbar"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

@@ -1,6 +1,13 @@
 {
   "name": "german-data-protection-statement",
-  "version": "0.2.3",
+  "version": "0.2.4",
+  "author": "michael spengler",
+  "license": "GNU GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-planner/angular-libraries",
+    "directory": "projects/dps"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
