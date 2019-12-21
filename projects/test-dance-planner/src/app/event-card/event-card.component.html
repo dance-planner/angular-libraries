@@ -7,25 +7,28 @@
     {{card.info}}
   </h6>
 
-  <div class="imageDiv">
+  <button *ngIf="showDetails" (click)="clickShare()">
+    {{ shareLongText }}
+  </button>
+
+  <span *ngIf="shareMode && showDetails">
+    {{ shareLongText }} <i (click)="copyText(card.linkToThisItem)" class="fa fa-copy fa-1x"></i>
+    <p></p>
+
+    <input #userinput type="text" value="{{card.linkToThisItem}}" contenteditable="true" style="display: none">
+    <a target="_blank" href="{{ card.linkToThisItem }}">{{ card.linkToThisItem }} </a>
+
+  </span>
+
+  <div class="imageDiv" (click)="clickCard()">
     <img src="{{card.imageURL}}" alt="super">
   </div>
 
-  <span *ngIf="shareMode">
-      {{ shareLongText }} <i (click)="copyText(card.linkToThisItem)" class="fa fa-copy fa-1x"
-         style="padding-left: 1%"></i>
-      <p></p>
-
-      <input #userinput type="text" value="{{card.linkToThisItem}}" contenteditable="true" style="display: none">
-      <a target="_blank" href="{{ card.linkToThisItem }}">{{ card.linkToThisItem }} </a>
-
-    </span>
 
   <span *ngIf="showDetails" (click)="clickCard()">
 
-    <p>
-      {{card.details}}
-    </p>
+    {{card.details}}
+
     <a target="_blank" href="{{ card.linkToFurtherInfo }}">
       <button>
         {{ furtherInfoText }}

@@ -25,7 +25,11 @@ export class EventCardComponent implements OnInit {
   }
 
   public clickCard() {
+    this.showDetails = !this.showDetails;
+  }
 
+  public clickShare() {
+    this.shareMode = !this.shareMode;
   }
 
   public copyText(val: string) {
