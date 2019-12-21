@@ -1,0 +1,19 @@
+<cdk-virtual-scroll-viewport itemSize="{{itemSize}}" [ngStyle]="{'height.px': viewPortHeight}">
+
+  <div *cdkVirtualFor="let card of cards">
+
+    <div class="eventCard">
+
+      <lib-dance-planner-card
+      [card]="card"
+      [shareLongText]="'Invite Friends'"
+      [furtherInfoText]="'Further Information'"
+      ></lib-dance-planner-card>
+
+    </div>
+
+
+
+  </div>
+
+</cdk-virtual-scroll-viewport>

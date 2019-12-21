@@ -90,6 +90,18 @@
       ],
       "contact/*": [
         "dist/contact/*"
+      ],
+      "dance-planner-card": [
+        "dist/dance-planner-card"
+      ],
+      "dance-planner-card/*": [
+        "dist/dance-planner-card/*"
+      ],
+      "dance-planner-cards": [
+        "dist/dance-planner-cards"
+      ],
+      "dance-planner-cards/*": [
+        "dist/dance-planner-cards/*"
       ]
     }
   },

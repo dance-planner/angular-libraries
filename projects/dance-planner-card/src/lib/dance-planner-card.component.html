@@ -1,0 +1,40 @@
+<div class="cardDiv">
+  <h3 (click)="clickCard()">
+    {{card.title}}
+  </h3>
+
+  <h6 (click)="clickCard()">
+    {{card.info}}
+  </h6>
+
+  <button *ngIf="showDetails" (click)="clickShare()">
+    {{ shareLongText }}
+  </button>
+
+  <span *ngIf="shareMode && showDetails">
+    {{ shareLongText }} <i (click)="copyText(card.linkToThisItem)" class="fa fa-copy fa-1x"></i>
+    <p></p>
+
+    <input #userinput type="text" value="{{card.linkToThisItem}}" contenteditable="true" style="display: none">
+    <a target="_blank" href="{{ card.linkToThisItem }}">{{ card.linkToThisItem }} </a>
+
+  </span>
+
+  <div class="imageDiv" (click)="clickCard()">
+    <img src="{{card.imageURL}}" alt="super">
+  </div>
+
+
+  <span *ngIf="showDetails" (click)="clickCard()">
+
+    {{card.details}}
+
+    <a target="_blank" href="{{ card.linkToFurtherInfo }}">
+      <button>
+        {{ furtherInfoText }}
+      </button>
+    </a>
+
+  </span>
+
+</div>

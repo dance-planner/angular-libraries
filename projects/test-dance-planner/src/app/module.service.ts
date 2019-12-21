@@ -32,7 +32,7 @@ export class ModuleService {
   }
   public disclaimerStylingData(): any {
     return {
-      textAlign: 'inherit',
+      textAlign: 'center',
       bgColor: 'inherit'
     };
   }

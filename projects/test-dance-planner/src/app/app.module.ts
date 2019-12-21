@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { NavbarModule } from '../../../navbar/src/public-api';
 import { DisclaimerModule } from '../../../disclaimer/src/public-api';
