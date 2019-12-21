@@ -6,11 +6,11 @@
 
 <div class="contentScreen">
 
-  <app-event-cards *ngIf="view==='/find'" [cards]="cards" [cardDivStyling]="cardDivStyling"
+  <lib-dance-planner-cards *ngIf="view==='/find'" [cards]="cards" [cardDivStyling]="cardDivStyling"
                    [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [itemSize]="itemSize"
                    [viewPortHeight]="height">
 
-  </app-event-cards>
+  </lib-dance-planner-cards>
 
 
   <lib-contact *ngIf="view==='/contact'" [individualImpressumData]="individualImpressumData"
