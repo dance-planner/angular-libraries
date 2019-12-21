@@ -1,0 +1,14 @@
+<lib-navbar [navBarData]="navBarData" (clickMenuEntry)="onClickMenuEntry($event)"></lib-navbar>
+
+<div class="contentScreen">
+
+
+  <section class="cards-section" *ngIf="view==='/find'" >
+    <lib-cards [cards]="cards" [titleStyling]="cardTitleStyle" [cardStyling]="cardStyling" [itemSize]="itemSize" [viewPortHeight]="height"></lib-cards>
+  </section>
+  <!-- <lib-images-grid [imagesWithLinks]=imageLinksWithDetailLinks></lib-images-grid> -->
+  <!-- <lib-contact-options [contactOptions]="contactOptions"></lib-contact-options> -->
+
+  <app-contact *ngIf="view==='/contact'" [individualImpressumData]="individualImpressumData" [stylingData]="disclaimerStylingData"></app-contact>
+
+</div>

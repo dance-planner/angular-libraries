@@ -9,6 +9,7 @@ export class NgQAndAService {
   constructor(private http: HttpClient) { }
 
   public get(url: any): any {
+    console.log(`calling to get ${url}`);
     return this.http.get<any>(url);
   }
 
