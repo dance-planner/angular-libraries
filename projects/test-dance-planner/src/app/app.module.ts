@@ -9,13 +9,18 @@ import { DpsModule } from '../../../dps/src/public-api';
 import { ImpressumModule } from '../../../impressum/src/public-api';
 import { CardsModule } from '../../../cards/src/public-api';
 import { HttpClientModule } from '@angular/common/http';
-
+import { EventCardsComponent } from './event-cards/event-cards.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { EventCardComponent } from './event-card/event-card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent
+    ContactComponent,
+    EventCardsComponent,
+    EventCardComponent
   ],
   imports: [
+    ScrollingModule,
     HttpClientModule,
     CardsModule,
     ImpressumModule,

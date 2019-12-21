@@ -87,12 +87,15 @@ export class ModuleService {
   }
 
 
-  public getCardStyle(): any {
+  public getCardDivStyle(): any {
+    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    // alert(width);
+    const maxWidth = (width < 500) ? 95 : 70;
     return {
       'margin-top': '10vh',
       'margin-left': 'auto',
       'margin-right': 'auto',
-      'max-width': '70em',
+      'max-width': `20%`,
       border: 'solid #000',
       'text-align': 'center',
       'background-color': 'inherit',
@@ -115,6 +118,12 @@ export class ModuleService {
       'background-color': 'inherit',
       'font-size': '24px',
       color: 'rgb(93,188, 210)'
+    };
+  }
+
+  public getCardImageStyle(): any {
+    return {
+      'max-width': '90%'
     };
   }
 

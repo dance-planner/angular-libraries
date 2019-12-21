@@ -2,10 +2,18 @@
 
 <div class="contentScreen">
 
+    <app-event-cards
+    [cards]="cards"
+    [cardDivStyling]="cardDivStyling"
+    [cardTitleStyling]="cardTitleStyle"
+    [infoStyling]="cardInfoStyle"
+    [itemSize]="itemSize"
+    [viewPortHeight]="height">
 
-  <section class="cards-section" *ngIf="view==='/find'" >
-    <lib-cards [cards]="cards" [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [cardStyling]="cardStyling" [itemSize]="itemSize" [viewPortHeight]="height"></lib-cards>
-  </section>
+    </app-event-cards>
+  <!-- <section class="cards-section" *ngIf="view==='/find'" >
+    <lib-cards [cards]="cards" [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [cardStyling]="cardDivStyling" [itemSize]="itemSize" [viewPortHeight]="height"></lib-cards>
+  </section> -->
   <!-- <lib-images-grid [imagesWithLinks]=imageLinksWithDetailLinks></lib-images-grid> -->
   <!-- <lib-contact-options [contactOptions]="contactOptions"></lib-contact-options> -->
 
