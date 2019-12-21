@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   public height = 3000;
   public cardStyling: any = this.moduleService.getCardStyle();
   public cardTitleStyle: any = this.moduleService.getCardTitleStyle();
+  public cardInfoStyle: any = this.moduleService.getCardInfoStyle();
   public individualImpressumData: any = this.moduleService.getIndividualImpressumData();
   public disclaimerStylingData: any = this.moduleService.disclaimerStylingData();
   public cards: ICardData[] = []; // this.moduleService.getCards();

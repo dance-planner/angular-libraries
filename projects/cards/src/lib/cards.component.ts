@@ -10,15 +10,10 @@ import { ICardData } from 'ng-card';
 export class CardsComponent {
 
   @Input() public cards: ICardData[] = [];
-  @Input() public cardStyling: any = this.getDefaultStyle();
-  @Input() public itemSize = 700;
-  @Input() public viewPortHeight = 3000;
-
-  private getDefaultStyle(): any {
-    return {
-      'background-color': 'white',
-      'max-width': '10px'
-    };
-  }
+  @Input() public cardStyling: any;
+  @Input() public infoStyling: any;
+  @Input() public cardTitleStyling: any;
+  @Input() public itemSize;
+  @Input() public viewPortHeight;
 
 }

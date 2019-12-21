@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
 
   @Input() public card: ICardData = this.getDefaultData();
   @Input() public cardStyling: any = this.getDefaultStyle();
-  @Input() public titleStyling: any = this.getTitleDefaultStyle();
+  @Input() public cardTitleStyling: any = this.getTitleDefaultStyle();
   @Input() public infoStyling: any = this.getInfoDefaultStyle();
   @Input() public detailsStyling: any = this.getDetailsStyling();
   @Input() public imageDivStyling: any = this.getImageDivDefaultStyle();

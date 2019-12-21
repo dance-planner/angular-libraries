@@ -104,7 +104,17 @@ export class ModuleService {
     return {
       'text-align': 'center',
       'background-color': 'inherit',
+      'font-size': '42px',
       color: 'rgb(213,54,84)'
+    };
+  }
+
+  public getCardInfoStyle(): any {
+    return {
+      'text-align': 'center',
+      'background-color': 'inherit',
+      'font-size': '24px',
+      color: 'rgb(93,188, 210)'
     };
   }
 
