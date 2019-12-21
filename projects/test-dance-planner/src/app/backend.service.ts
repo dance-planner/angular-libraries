@@ -31,7 +31,8 @@ export class BackendService {
 
   public static responseList: any[] = [];
 
-  public static readonly backendURL = 'https://fance-stiftung.de/';
+  // public static readonly backendURL = 'https://fance-stiftung.de/';
+  public static readonly backendURL = 'http://localhost:3000/';
 
   public constructor(private http: HttpClient) {}
 

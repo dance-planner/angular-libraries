@@ -89,6 +89,11 @@ export class ModuleService {
 
   public getCardStyle(): any {
     return {
+      'margin-top': '10vh',
+      'margin-left': 'auto',
+      'margin-right': 'auto',
+      'max-width': '70em',
+      border: 'solid #000',
       'text-align': 'center',
       'background-color': 'inherit',
       color: 'rgb(213,54,84)'
