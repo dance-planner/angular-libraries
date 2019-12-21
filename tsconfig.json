@@ -84,6 +84,12 @@
       ],
       "ng-q-and-a/*": [
         "dist/ng-q-and-a/*"
+      ],
+      "contact": [
+        "dist/contact"
+      ],
+      "contact/*": [
+        "dist/contact/*"
       ]
     }
   },

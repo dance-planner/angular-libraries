@@ -51,16 +51,4 @@ img {
   width: 100%;
 }
 
-@media screen and (min-width: 700px) {
-  .cardDiv {
-    width: 70%;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .cardDiv {
-    width: 40%;
-  }
-}
-
 

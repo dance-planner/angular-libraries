@@ -1921,6 +1921,159 @@
           }
         }
       }
+    },
+    "contact": {
+      "projectType": "library",
+      "root": "projects/contact",
+      "sourceRoot": "projects/contact/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/contact/tsconfig.lib.json",
+            "project": "projects/contact/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/contact/src/test.ts",
+            "tsConfig": "projects/contact/tsconfig.spec.json",
+            "karmaConfig": "projects/contact/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/contact/tsconfig.lib.json",
+              "projects/contact/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "test-contact": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/test-contact",
+      "sourceRoot": "projects/test-contact/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/test-contact",
+            "index": "projects/test-contact/src/index.html",
+            "main": "projects/test-contact/src/main.ts",
+            "polyfills": "projects/test-contact/src/polyfills.ts",
+            "tsConfig": "projects/test-contact/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/test-contact/src/favicon.ico",
+              "projects/test-contact/src/assets"
+            ],
+            "styles": [
+              "projects/test-contact/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/test-contact/src/environments/environment.ts",
+                  "with": "projects/test-contact/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "test-contact:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "test-contact:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "test-contact:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test-contact/src/test.ts",
+            "polyfills": "projects/test-contact/src/polyfills.ts",
+            "tsConfig": "projects/test-contact/tsconfig.spec.json",
+            "karmaConfig": "projects/test-contact/karma.conf.js",
+            "assets": [
+              "projects/test-contact/src/favicon.ico",
+              "projects/test-contact/src/assets"
+            ],
+            "styles": [
+              "projects/test-contact/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/test-contact/tsconfig.app.json",
+              "projects/test-contact/tsconfig.spec.json",
+              "projects/test-contact/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/test-contact/e2e/protractor.conf.js",
+            "devServerTarget": "test-contact:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "test-contact:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "test-dance-planner"
 }

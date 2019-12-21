@@ -1,22 +1,19 @@
+
 <lib-navbar [navBarData]="navBarData" (clickMenuEntry)="onClickMenuEntry($event)"></lib-navbar>
+<p><br></p>
+<p><br></p>
+<p><br></p>
 
 <div class="contentScreen">
 
-    <app-event-cards
-    [cards]="cards"
-    [cardDivStyling]="cardDivStyling"
-    [cardTitleStyling]="cardTitleStyle"
-    [infoStyling]="cardInfoStyle"
-    [itemSize]="itemSize"
-    [viewPortHeight]="height">
+  <app-event-cards *ngIf="view==='/find'" [cards]="cards" [cardDivStyling]="cardDivStyling"
+                   [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [itemSize]="itemSize"
+                   [viewPortHeight]="height">
 
-    </app-event-cards>
-  <!-- <section class="cards-section" *ngIf="view==='/find'" >
-    <lib-cards [cards]="cards" [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [cardStyling]="cardDivStyling" [itemSize]="itemSize" [viewPortHeight]="height"></lib-cards>
-  </section> -->
-  <!-- <lib-images-grid [imagesWithLinks]=imageLinksWithDetailLinks></lib-images-grid> -->
-  <!-- <lib-contact-options [contactOptions]="contactOptions"></lib-contact-options> -->
+  </app-event-cards>
 
-  <app-contact *ngIf="view==='/contact'" [individualImpressumData]="individualImpressumData" [stylingData]="disclaimerStylingData"></app-contact>
+
+  <lib-contact *ngIf="view==='/contact'" [individualImpressumData]="individualImpressumData"
+               [disclaimerStylingData]="disclaimerStylingData"></lib-contact>
 
 </div>

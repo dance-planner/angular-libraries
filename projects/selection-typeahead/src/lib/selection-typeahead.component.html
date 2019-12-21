@@ -1,4 +1,10 @@
-<input id="{{id}}" type="text" [(ngModel)]="selectedItem"
-(click)="clearItemField()" [ngbTypeahead]="searchItem" value="{{selectedItem}}"
+<input id="typeahead-basic" type="text" class="form-control typeahead logoBlau"
+[(ngModel)]="selectedItem" [ngbTypeahead]="searchItem" value="{{selectedItem}}"
+(click)="clearItemField()" (selectItem)="handleItemSelected($event)"
+placeholder="Start typing countryname..." [editable]='false' />
+
+
+<input id="typeahead-basic" type="text" [(ngModel)]="selectedItem"
+(click)="clearItemField()" class="form-control" [ngbTypeahead]="searchItem" value="{{selectedItem}}"
 (selectItem)="handleItemSelected($event)" placeholder="{{placeholder}}"
 [editable]='false' [ngStyle]="ngStyle"/>

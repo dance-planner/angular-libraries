@@ -1,0 +1,19 @@
+{
+  "name": "dance-planner-contact",
+  "version": "0.0.2",
+  "license": "GNU GPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dance-planner/angular-libraries",
+    "directory": "projects/card"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "dependencies": {
+    "german-data-protection-statement": "^0.1.0",
+    "german-impressum": "^0.2.4",
+    "german-legal-disclaimer": "^0.1.0"
+  }
+}

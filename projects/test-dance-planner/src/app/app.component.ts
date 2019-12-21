@@ -3,6 +3,7 @@ import { INavbarData } from '../../../navbar/src/public-api';
 import { ModuleService } from './module.service';
 import { ICardData } from '../../../card/src/public-api';
 import { BackendService } from './backend.service';
+import { IIndividualImpressumData } from '../../../impressum/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,10 @@ export class AppComponent implements OnInit {
   public cardTitleStyle: any = this.moduleService.getCardTitleStyle();
   public cardInfoStyle: any = this.moduleService.getCardInfoStyle();
   public cardImageStyle: any = this.moduleService.getCardImageStyle();
-  public individualImpressumData: any = this.moduleService.getIndividualImpressumData();
+  public ngStyleTypeAheadDanceStyles: any = this.moduleService.getNgStyleTypeAheadDanceStyles();
+  public typeAheadConfig: any = this.moduleService.getTypeAheadConfig();
+  public danceStyles: string[] = [];
+  public individualImpressumData: IIndividualImpressumData = this.moduleService.getIndividualImpressumData();
   public disclaimerStylingData: any = this.moduleService.disclaimerStylingData();
   public cards: ICardData[] = []; // this.moduleService.getCards();
   public selectedCountry = 'Germany';
@@ -34,6 +38,7 @@ export class AppComponent implements OnInit {
     .subscribe((responseList: any[]) => {
       BackendService.responseList = responseList;
       this.cards = this.moduleService.getCardsFromEvents(responseList[0]);
+      this.danceStyles = responseList[1];
       // this.handleLandingPageData(responseList);
     },
       error => {
@@ -48,6 +53,10 @@ export class AppComponent implements OnInit {
     }
 
     this.view = target;
+  }
+
+  public onDanceStyleSelected(danceStyle: string) {
+    alert(danceStyle);
   }
 
 }

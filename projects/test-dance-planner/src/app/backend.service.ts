@@ -41,7 +41,7 @@ export class BackendService {
     const eventsUrl = `${BackendService.backendURL}api/events/getFutureEvents`;
     const events = this.get(eventsUrl);
 
-    const dancesUrl = `${BackendService.backendURL}api/dances/getDances`;
+    const dancesUrl = `${BackendService.backendURL}api/dance-planner/getDanceStyles`;
     const dances = this.get(dancesUrl);
 
     let cities;

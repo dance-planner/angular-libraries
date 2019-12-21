@@ -8,6 +8,28 @@ import { IEvent, BackendService } from './backend.service';
   providedIn: 'root'
 })
 export class ModuleService {
+
+  public constructor(private textService: TextService) {
+
+  }
+
+  public getTypeAheadConfig(): any {
+    return {
+      debounceTimeInMilliSeconds: 200,
+      showAfterXLetters: 1,
+      maxAmountOfDisplayedItems: 10
+    };
+  }
+  public getNgStyleTypeAheadDanceStyles(): any {
+    return {
+      'font-size': '18px',
+      'min-height': '3em',
+      'min-width': '100%',
+      color: 'rgb(213,54,84)',
+      'background-color': '#000',
+      'text-align': 'center',
+    };
+  }
   public disclaimerStylingData(): any {
     return {
       textAlign: 'inherit',
@@ -28,9 +50,6 @@ export class ModuleService {
     };
   }
 
-  public constructor(private textService: TextService) {
-
-  }
 
   public getCardsFromEvents(events: IEvent[]): ICardData[] {
     const cards: ICardData[] = [];
@@ -72,11 +91,6 @@ export class ModuleService {
         isActive: false,
         text: texts.info.useAsApp,
         href: '/app',
-      },
-      {
-        isActive: false,
-        text: texts.info.furtherFunctions,
-        href: '/furtherFunctions',
       },
       {
         isActive: false,
