@@ -1,0 +1,10 @@
+input {
+  width: 100%;
+  font-size: 18px;
+  min-height: 3em;
+  background-color: #000;
+  text-align: center;
+  color: rgb(213,54,84)
+  /* color: rgb(93,188, 210) */
+}
+

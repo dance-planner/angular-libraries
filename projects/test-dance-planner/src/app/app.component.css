@@ -1,3 +1,11 @@
+input {
+  min-height: 3em;
+  min-width: 98%;
+  font-size: 24px;
+  background-color: black;
+  color: rgb(93,188, 210);
+}
+
 .sliderDiv {
   width: 90%;
   font-size: 19px;

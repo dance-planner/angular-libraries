@@ -3,9 +3,25 @@
 <div class="contentScreen">
 
   <section id="findEvents" *ngIf="view==='/find'">
+    <span class="typeahead">
+
+        <input
+        id="typeahead-focus"
+        type="text"
+        class="form-control"
+        [(ngModel)]="selectedCity"
+        [ngbTypeahead]="search"
+        (focus)="focus$.next($event.target.value)"
+        (click)="click$.next($event.target.value)"
+        #instance="ngbTypeahead"
+      />
+
+      <!-- <input [value]="search" ngxTypeahead [taUrl]="url" [taParams]="params"
+             (taSelected)="handleResultSelected($event)"> -->
+    </span>
     <div class="sliderDiv">
       <lib-ng-range (setValue)="handleRangeSetting($event)" [cityName]=cityName [currentRange]="currentRange"
-      [maximumRange]="maximumRange" [minimumRange]="minimumRange"></lib-ng-range>
+                    [maximumRange]="maximumRange" [minimumRange]="minimumRange"></lib-ng-range>
     </div>
 
     <lib-dance-planner-cards [cards]="cards" [cardDivStyling]="cardDivStyling" [cardTitleStyling]="cardTitleStyle"

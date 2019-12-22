@@ -1,0 +1,11 @@
+{
+  "name": "dance-planner-typeahead",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "dependencies": {
+    "ngx-bootstrap": "^5.2.0"
+  }
+}

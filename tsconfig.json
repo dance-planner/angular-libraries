@@ -108,6 +108,12 @@
       ],
       "ng-range/*": [
         "dist/ng-range/*"
+      ],
+      "ng-simple-typeahead": [
+        "dist/ng-simple-typeahead"
+      ],
+      "ng-simple-typeahead/*": [
+        "dist/ng-simple-typeahead/*"
       ]
     }
   },

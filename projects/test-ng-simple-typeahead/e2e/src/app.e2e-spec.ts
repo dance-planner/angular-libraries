@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('test-selection-typeahead app is running!');
+    expect(page.getTitleText()).toEqual('test-ng-simple-typeahead app is running!');
   });
 
   afterEach(async () => {

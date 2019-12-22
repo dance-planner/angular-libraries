@@ -1,0 +1,9 @@
+<input [(ngModel)]="selectedItem"
+       [typeaheadOptionsInScrollableView]="5"
+       [typeahead]="items"
+       [typeaheadScrollable]="true"
+       (typeaheadOnSelect)="onItemSelected($event)"
+       class="form-control"
+       placeholder="{{placeHolder}}"
+       (click)="onInputClicked()"
+       value="Bachata">

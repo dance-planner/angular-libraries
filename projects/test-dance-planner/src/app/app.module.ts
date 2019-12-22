@@ -8,24 +8,28 @@ import { ImpressumModule } from '../../../impressum/src/public-api';
 import { CardsModule } from '../../../cards/src/public-api';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { SelectionTypeaheadModule } from '../../../selection-typeahead/src/public-api';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactModule } from 'dance-planner-contact';
 import { DancePlannerCardsModule } from 'dance-planner-cards';
 import { NgRangeModule } from 'ng-range';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    NgbTypeaheadModule,
+    NgxTypeaheadModule,
     NgRangeModule,
     DancePlannerCardsModule,
     ContactModule,
     NgbModule,
     FormsModule,
-    SelectionTypeaheadModule,
     ScrollingModule,
     HttpClientModule,
     CardsModule,
@@ -33,7 +37,9 @@ import { NgRangeModule } from 'ng-range';
     DisclaimerModule,
     DpsModule,
     NavbarModule,
-    BrowserModule
+    BrowserModule,
+    TypeaheadModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

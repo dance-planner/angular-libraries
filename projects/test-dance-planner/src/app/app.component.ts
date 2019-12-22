@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { INavbarData } from '../../../navbar/src/public-api';
 import { ModuleService } from './module.service';
 import { ICardData } from '../../../card/src/public-api';
 import { BackendService } from './backend.service';
 import { IIndividualImpressumData } from '../../../impressum/src/public-api';
+import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import {Observable, Subject, merge} from 'rxjs';
+import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -31,10 +34,23 @@ export class AppComponent implements OnInit {
   public myRange = 70;
   public selectedCity = 'Heidelberg';
   public navBarData: INavbarData = this.moduleService.getNavBarData('en');
-
   public cityName = 'Heidelberg';
   public  minimumRange = 10;
   public  currentRange = 20;
+  model: any;
+
+  @ViewChild('instance', {static: true}) instance: NgbTypeahead;
+  focus$ = new Subject<string>();
+  click$ = new Subject<string>();
+  // public url = 'http://suggestqueries.google.com/complete/search';
+  // public params = {
+  //   hl: 'en',
+  //   ds: 'yt',
+  //   xhr: 't',
+  //   client: 'youtube',
+  //   q: 'query'
+  // };
+  // public search = '';
 
   public constructor(private moduleService: ModuleService,
                      private backendService: BackendService) { }
@@ -74,4 +90,18 @@ export class AppComponent implements OnInit {
     alert(this.currentRange);
   }
 
+  handleResultSelected(result) {
+    this.search = result;
+  }
+
+  search = (text$: Observable<string>) => {
+    const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
+    const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
+    const inputFocus$ = this.focus$;
+
+    return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
+      map(term => (term === '' ? states
+        : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10))
+    );
+  }
 }
