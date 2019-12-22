@@ -33,6 +33,7 @@
     "dance-planner-cards": "0.0.1",
     "dance-planner-contact": "0.0.2",
     "hammerjs": "^2.0.8",
+    "ng-range": "0.0.1",
     "ng-simple-typeahead": "0.0.3",
     "npm-cli-login": "^0.1.1",
     "rxjs": "~6.4.0",

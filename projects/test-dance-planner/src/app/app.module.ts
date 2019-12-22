@@ -13,12 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactModule } from 'dance-planner-contact';
 import { DancePlannerCardsModule } from 'dance-planner-cards';
+import { NgRangeModule } from 'ng-range';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    NgRangeModule,
     DancePlannerCardsModule,
     ContactModule,
     NgbModule,

@@ -3,8 +3,7 @@ import { ICardData } from 'dance-planner-card';
 
 @Component({
   selector: 'lib-dance-planner-cards',
-  templateUrl: './dance-planner-cards.component.html',
-  styleUrls: ['dance-planner-cards.component.css']
+  templateUrl: './dance-planner-cards.component.html'
 })
 export class DancePlannerCardsComponent implements OnInit {
 

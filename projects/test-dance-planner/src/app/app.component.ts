@@ -27,8 +27,14 @@ export class AppComponent implements OnInit {
   public selectedCountry = 'Germany';
   public minPop = 1000;
   public dataLoadedSuccessfully = false;
-
+  public maximumRange = 700;
+  public myRange = 70;
+  public selectedCity = 'Heidelberg';
   public navBarData: INavbarData = this.moduleService.getNavBarData('en');
+
+  public cityName = 'Heidelberg';
+  public  minimumRange = 10;
+  public  currentRange = 20;
 
   public constructor(private moduleService: ModuleService,
                      private backendService: BackendService) { }
@@ -57,6 +63,15 @@ export class AppComponent implements OnInit {
 
   public onDanceStyleSelected(danceStyle: string) {
     alert(danceStyle);
+  }
+
+  public filterByAllParams() {
+    alert('filter');
+  }
+
+  public handleRangeSetting($event) {
+    this.currentRange = $event;
+    alert(this.currentRange);
   }
 
 }

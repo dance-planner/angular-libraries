@@ -2262,6 +2262,159 @@
           }
         }
       }
+    },
+    "ng-range": {
+      "projectType": "library",
+      "root": "projects/ng-range",
+      "sourceRoot": "projects/ng-range/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-range/tsconfig.lib.json",
+            "project": "projects/ng-range/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-range/src/test.ts",
+            "tsConfig": "projects/ng-range/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-range/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-range/tsconfig.lib.json",
+              "projects/ng-range/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "test-ng-range": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/test-ng-range",
+      "sourceRoot": "projects/test-ng-range/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/test-ng-range",
+            "index": "projects/test-ng-range/src/index.html",
+            "main": "projects/test-ng-range/src/main.ts",
+            "polyfills": "projects/test-ng-range/src/polyfills.ts",
+            "tsConfig": "projects/test-ng-range/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/test-ng-range/src/favicon.ico",
+              "projects/test-ng-range/src/assets"
+            ],
+            "styles": [
+              "projects/test-ng-range/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/test-ng-range/src/environments/environment.ts",
+                  "with": "projects/test-ng-range/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "test-ng-range:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "test-ng-range:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "test-ng-range:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test-ng-range/src/test.ts",
+            "polyfills": "projects/test-ng-range/src/polyfills.ts",
+            "tsConfig": "projects/test-ng-range/tsconfig.spec.json",
+            "karmaConfig": "projects/test-ng-range/karma.conf.js",
+            "assets": [
+              "projects/test-ng-range/src/favicon.ico",
+              "projects/test-ng-range/src/assets"
+            ],
+            "styles": [
+              "projects/test-ng-range/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/test-ng-range/tsconfig.app.json",
+              "projects/test-ng-range/tsconfig.spec.json",
+              "projects/test-ng-range/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/test-ng-range/e2e/protractor.conf.js",
+            "devServerTarget": "test-ng-range:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "test-ng-range:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "test-dance-planner"
 }

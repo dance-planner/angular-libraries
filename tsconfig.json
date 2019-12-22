@@ -102,6 +102,12 @@
       ],
       "dance-planner-cards/*": [
         "dist/dance-planner-cards/*"
+      ],
+      "ng-range": [
+        "dist/ng-range"
+      ],
+      "ng-range/*": [
+        "dist/ng-range/*"
       ]
     }
   },

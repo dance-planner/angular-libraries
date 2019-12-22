@@ -1,0 +1,7 @@
+
+{{ cityName }} and nearby until {{ currentRange }}
+km
+<p></p>
+
+<input type="range" min="{{minimumRange}}" max="{{ maximumRange }}" class="slider" [(ngModel)]="currentRange"
+(change)="handleChange()" />

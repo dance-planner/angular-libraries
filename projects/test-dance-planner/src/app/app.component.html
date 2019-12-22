@@ -1,16 +1,18 @@
-
 <lib-navbar [navBarData]="navBarData" (clickMenuEntry)="onClickMenuEntry($event)"></lib-navbar>
-<p><br></p>
-<p><br></p>
-<p><br></p>
 
 <div class="contentScreen">
 
-  <lib-dance-planner-cards *ngIf="view==='/find'" [cards]="cards" [cardDivStyling]="cardDivStyling"
-                   [cardTitleStyling]="cardTitleStyle" [infoStyling]="cardInfoStyle" [itemSize]="itemSize"
-                   [viewPortHeight]="height">
+  <section id="findEvents" *ngIf="view==='/find'">
+    <div class="sliderDiv">
+      <lib-ng-range (setValue)="handleRangeSetting($event)" [cityName]=cityName [currentRange]="currentRange"
+      [maximumRange]="maximumRange" [minimumRange]="minimumRange"></lib-ng-range>
+    </div>
 
-  </lib-dance-planner-cards>
+    <lib-dance-planner-cards [cards]="cards" [cardDivStyling]="cardDivStyling" [cardTitleStyling]="cardTitleStyle"
+                             [infoStyling]="cardInfoStyle" [itemSize]="itemSize" [viewPortHeight]="height">
+
+    </lib-dance-planner-cards>
+  </section>
 
 
   <lib-contact *ngIf="view==='/contact'" [individualImpressumData]="individualImpressumData"
