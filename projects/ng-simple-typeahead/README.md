@@ -7,7 +7,7 @@
 
 **Add the following in your html**  
 ```
-<lib-ng-simple-typeahead [placeHolder]="placeHolder" [items]="dances" (itemSelected)="onItemSelected($event)"></lib-ng-simple-typeahead>
+<lib-ng-simple-typeahead [placeHolder]="placeHolder" [items]="dances" [inputStyle]="inputStyle" (itemSelected)="onItemSelected($event)"></lib-ng-simple-typeahead>
 ```
 
 **Add the following in your ...component.ts**  

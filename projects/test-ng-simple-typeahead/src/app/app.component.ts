@@ -12,14 +12,24 @@ export class AppComponent {
   public selectedItem = 'Bachata';
 
   public dances: string[] = [
-    'Bachata',
+    'Bachata |fance#< http://localhost:3001/getFlag/countryCode/DE',
     'Salsa',
     'Merengue'
   ];
 
+  public useCustomTemplate = true;
+  public inputStyle = {
+    width: '100%',
+    'font-size': '18px',
+    'min-height': '3em',
+    'background-color': '#000',
+    'text-align': 'center',
+    color: 'rgb(213,54,84)',
+  };
+
   public onItemSelected($event) {
     this.selectedItem = $event;
-    alert(this.selectedItem);
   }
 
-}
+ }
+

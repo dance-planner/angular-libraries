@@ -1,9 +1,17 @@
-<input [(ngModel)]="selectedItem"
-       [typeaheadOptionsInScrollableView]="5"
-       [typeahead]="items"
-       [typeaheadScrollable]="true"
-       (typeaheadOnSelect)="onItemSelected($event)"
-       class="form-control"
-       placeholder="{{placeHolder}}"
-       (click)="onInputClicked()"
-       value="Bachata">
+<ng-template #customItemTemplate let-model="item" let-index="index">
+  <img [src]="getImageUrl(model)" style="width: 16px; margin-right: 20px;">
+  {{getThePureString(model) | json}}
+</ng-template>
+
+<span *ngIf="useCustomTemplate">
+  <input [(ngModel)]=selectedItem [ngStyle]="inputStyle" [typeaheadOptionsInScrollableView]="maxNumberOfProposals"
+  [typeahead]="items" [typeaheadScrollable]="true" (typeaheadOnSelect)="onItemSelected($event)"
+  class="form-control" placeholder="{{placeHolder}}" (click)="onInputClicked()" value="Bachata"
+  [typeaheadItemTemplate]="customItemTemplate">
+</span>
+
+<span *ngIf="!useCustomTemplate">
+    <input [(ngModel)]="selectedItem" [ngStyle]="inputStyle" [typeaheadOptionsInScrollableView]="maxNumberOfProposals"
+    [typeahead]="items" [typeaheadScrollable]="true" (typeaheadOnSelect)="onItemSelected($event)"
+    class="form-control" placeholder="{{placeHolder}}" (click)="onInputClicked()" value="Bachata">
+  </span>
